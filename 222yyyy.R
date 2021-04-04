@@ -16,8 +16,9 @@ print
   minim<-min(vybst[,c1[1,outcome]],na.rm = TRUE)
   
   vyb2<-filter(vybst,vybst[,c1[1,outcome]]==minim)  
-        print ("working")
-        print (vyb2$Hospital.Name)
+ arrange(vyb2,Hospital.Name)
+ print ("working")
+        print (vyb2$Hospital.Name[1])
   } 
   else {print ("Wrong format")}
 }
