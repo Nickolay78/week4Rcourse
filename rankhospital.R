@@ -26,13 +26,15 @@ rankhospital <- function(state, outcome, num = "best") {
     
     vyb<-arrange(vyb,vyb$Hospital.Name)
     vyb<-arrange(vyb,vyb[,c1[1,outcome]])
-    
-    print (vyb$Hospital.Name[rank1])
+  
+    return (vyb$Hospital.Name[rank1])
   } else {
-    if (state%in%outcome1$State) {print ("Invalid State")}
+    if (state%in%outcome1$State) {print ("Invalid State")
+      stop(call. = FALSE)}
     if (outcome%in%c("heart attack",
                      "heart failure", 
-                     "pneumonia")) {print ("Invalid Outcome")}
+                     "pneumonia")) {print ("Invalid Outcome")
+      stop(call. = FALSE)}
     
   }
 }
